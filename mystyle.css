@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #topic {
+        /*border: 1px solid blue;*/
+
+        h1 {
+            font-family: "Montserrat", sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: "Lora", serif;
+            text-align: center;
+        }
+    }
+
+    #container-content {
+        padding-top: 1rem;
+
+        div {
+            h2 {
+                font-family: "Montserrat", sans-serif;
+                text-align: center;
+                padding-bottom: 1rem;
+                color: #007723;
+            }
+        }
+        
+        #container-columns {
+            /*border: 1px solid blue;*/
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: calc(1rem - 1vh);
+            text-align: center;
+
+            div {
+                ul {
+                    li {
+                        font-family: "Hind Madurai", sans-serif;
+                        padding: 0.25rem 0rem;
+
+                        .menu {
+                            font-weight: bold;
+                        }
+                        
+                        a {
+                            color: #000;
+                            /*border: 1px solid red;*/
+                            transition: all ease 500ms;
+                        }
+
+                        a:hover {
+                            color: #007723;
+                        }
+
+                        .submenu {
+                            display: none;
+                        }
+                    }
+
+                    li:hover .submenu {
+                        display: block;
+                        /*border: 1px solid green;*/
+                    }
+                }
+            }
+        }
+    } 
+}
+
+/* RESPONSIVE*/
+@media screen and (max-width: 425px){
+    body {
+        #topic {
+            h1 {
+                font-size: calc(2.25rem - 1vh);
+                line-height: calc(2.15rem - 1vh);
+                padding-bottom: 0.2rem;
+            }
+
+            h2 {
+                font-size: calc(1.5rem - 1vh);
+            }
+        }
+
+        #container-content {
+            #container-columns {
+                grid-template-columns: 100%;
+                /*border: 1px solid red;*/
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+    #container-columns {
+        width: 100%;
+        gap: calc(1rem - 1vh);
+    }
+}
+
